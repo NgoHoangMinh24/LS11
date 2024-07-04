@@ -1,0 +1,65 @@
+﻿@model NhmK22CNT3Lesson11_2210900037.Models.NhmProduct
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/Nhm2210900037_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>NhmProduct</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NhmProName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhmProName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhmQty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhmQty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhmPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhmPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhmActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhmActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhmCategory.NhmCateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhmCategory.NhmCateName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "NhmIndex")
+        </div>
+    }
+</div>

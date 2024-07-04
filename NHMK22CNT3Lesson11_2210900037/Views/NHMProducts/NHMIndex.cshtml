@@ -1,0 +1,72 @@
+﻿@model IEnumerable<NhmK22CNT3Lesson11_2210900037.Models.NhmProduct>
+
+@{
+    ViewBag.Title = "Danh Sách Sản Phẩm";
+    Layout = "~/Views/Shared/Nhm2210900037_Layout.cshtml";
+}
+
+<h2>Danh Sách Sản Phẩm</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NhmId2210900037)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhmProName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhmQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhmPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhmActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhmCategory.NhmCateName)
+        </th>
+        <th>Chức Năng</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhmId2210900037)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhmProName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhmQty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhmPrice)
+        </td>
+        <td>
+            @*Html.DisplayFor(modelItem => item.NhmActive)*@
+            @if (item.NhmActive == true)
+            {
+                <span style="color:green"> Hoạt Động </span>
+            }
+            else
+            {
+                <span style="color:red"> Không Hoạt Động </span>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhmCategory.NhmCateName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.NhmId2210900037 }) |
+            @Html.ActionLink("Details", "Details", new { id = item.NhmId2210900037 }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.NhmId2210900037 })
+        </td>
+    </tr>
+}
+
+</table>

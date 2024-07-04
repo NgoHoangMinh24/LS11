@@ -1,0 +1,56 @@
+﻿@model IEnumerable<NhmK22CNT3Lesson11_2210900037.Models.NhmCategory>
+
+@{
+    ViewBag.Title = "Danh Mục Sản Phẩm";
+    Layout = "~/Views/Shared/Nhm2210900037_Layout.cshtml";
+}
+
+<h2>Danh Mục Sản Phẩm</h2>
+
+<p>
+    @* Html.ActionLink("Create New", "Create") *@
+</p>
+<a href="/NhmCategories/Create" class="btn btn-primary my-3">Thêm Mới</a> 
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NhmId)s
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhmCateName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhmStatus)
+        </th>
+        <th>Chức năng</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhmId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhmCateName)
+        </td>
+        <td>
+            @*Html.DisplayFor(modelItem => item.NhmStatus)*@
+
+            @if (item.NhmStatus == true)
+            {
+                <span style="color:green"> Hoạt Động </span>
+            }
+            else
+            {
+                <span style="color:red"> Không Hoạt Động </span>
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.NhmId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.NhmId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.NhmId })
+        </td>
+    </tr>
+}
+
+</table>

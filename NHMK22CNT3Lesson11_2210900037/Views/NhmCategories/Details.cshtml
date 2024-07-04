@@ -1,0 +1,35 @@
+﻿@model NhmK22CNT3Lesson11_2210900037.Models.NhmCategory
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Nhm2210900037_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NhmCategory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NhmCateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhmCateName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhmStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhmStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NhmId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

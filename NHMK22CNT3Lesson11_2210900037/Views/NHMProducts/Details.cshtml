@@ -1,0 +1,59 @@
+﻿@model NhmK22CNT3Lesson11_2210900037.Models.NhmProduct
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Nhm2210900037_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NhmProduct</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NhmProName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhmProName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhmQty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhmQty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhmPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhmPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhmActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhmActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhmCategory.NhmCateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhmCategory.NhmCateName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NhmId2210900037 }) |
+    @Html.ActionLink("Back to List", "NhmIndex")
+</p>
